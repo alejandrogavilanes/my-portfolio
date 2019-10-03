@@ -4,4 +4,8 @@ phase:
     - echo Building...
 artifacts:
   files:
-    - '**/*'
+    - index.html
+    - favicon.ico
+    - Alejandro Gavilanes CV.pdf
+    - styles/main.css
+    - images/*

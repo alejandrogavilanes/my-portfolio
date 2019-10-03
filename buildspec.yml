@@ -1,13 +1,9 @@
-version: 0.1
+version: 0.2
 
 phase:
   build:
     commands:
-      - echo Nothing to do ye
+      - echo Nothing to do yet
 artifacts:
   file:
-    - index.html
-    - favicon.ico
-    - Alejandro Gavilanes CV.pdf
-    - styles/main.css
-    - images/*
+    - '**/*'

@@ -1,6 +1,7 @@
 version: 0.2
 phase:
-
+  commands:
+    - echo Building...
 artifacts:
-  file:
+  files:
     - '**/*'

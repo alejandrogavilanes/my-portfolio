@@ -1,7 +1,7 @@
 import boto3
 from botocore.client import Config
 import zipfile
-
+# code used to write to a disk and then upload to S2 bucket
 s3 = boto3.resource('s3', config=Config(signature_version='s3v4'))
 
 build_bucket = s3.Bucket('portfoliobuild.robinnorwood.info')

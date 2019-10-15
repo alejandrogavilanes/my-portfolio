@@ -35,16 +35,16 @@
       <script type="text/babel" data-presets="latest">
 
       const getMessage = (name) => 'Welcome to Javascript, ${name}!';
-      const button = document.getElenentById('submit_info');
+      const button = document.getElementById('submit_info');
 
-      const contentArea = document.getElenentById('content');
-      const messageArea = document.getElenentById("error");
+      const contentArea = document.getElementById('content');
+      const messageArea = document.getElementById("error");
 
       button.addEventListener('click', (evt) => {
         messageArea.className = "error--hidden";
         contentArea.textContent = "";
 
-        let name = document.getElenentById("name").value;
+        let name = document.getElementById("name").value;
 
         if (name.lenght <2) {
           messageArea.textContent = "You need to enter a name";

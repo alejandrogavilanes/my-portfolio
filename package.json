@@ -1,0 +1,25 @@
+{
+  "name": "my-portfolio",
+  "version": "1.0.0",
+  "description": "My Portfolio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webpack",
+    "webpack-watch": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alejandrogavilanes/my-portfolio.git"
+  },
+  "author": "Alejandro Gavilanes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alejandrogavilanes/my-portfolio/issues"
+  },
+  "homepage": "https://github.com/alejandrogavilanes/my-portfolio#readme",
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  }
+}

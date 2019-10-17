@@ -1,7 +1,8 @@
 version: 0.2
 phase:
   commands:
-    - echo Building...
+    - npm install
+    - npm run webpack
 artifacts:
   files:
     - index.html
@@ -9,3 +10,4 @@ artifacts:
     - Alejandro Gavilanes CV.pdf
     - styles/main.css
     - images/*
+    - dist/bundle.js

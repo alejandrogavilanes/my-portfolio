@@ -8,6 +8,6 @@ artifacts:
     - index.html
     - favicon.ico
     - Alejandro Gavilanes CV.pdf
-    - styles/main.css
+    - styles/*
     - images/*
     - dist/bundle.js

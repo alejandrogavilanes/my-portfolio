@@ -1,17 +1,27 @@
-import boto3
+# Import specific classes from boto3 and botocore
+from boto3.resources.base import ServiceResource
+from boto3.s3.bucket import Bucket
 from botocore.client import Config
-import zipfile
-# code used to write to a disk and then upload to S2 bucket
-s3 = boto3.resource('s3', config=Config(signature_version='s3v4'))
+from zipfile import ZipFile  # Import ZipFile class from zipfile module
+import logging  # import logging for error handling
 
-build_bucket = s3.Bucket('portfoliobuild.robinnorwood.info')
-portfolio_bucket = s3.Bucket('portfolio.robinnorwood.info')
+# Initialize S3 resource with specific configuration
+s3: ServiceResource = ServiceResource('s3', config=Config(signature_version='s3v4'))
+
+build_bucket: Bucket = s3.Bucket('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')
+portfolio_bucket: Bucket = s3.Bucket('XXXXXXXXXXXXXXXXXXXXXXXXXXX')
 
 # On Windows, this will need to be a different location than /tmp
-build_bucket.download_file('portfolio.zip', '/tmp/portfolio.zip')
+try:
+    build_bucket.download_file('portfolio.zip', '/tmp/portfolio.zip')
 
-with zipfile.ZipFile('/tmp/portfolio.zip') as myzip:
-    for nm in myzip.namelist():
-        obj = myzip.open(nm)
-        target_bucket.upload_fileobj(obj, nm)
-        target_bucket.Object(nm).Acl().put(ACL='public-read')
+    with ZipFile('/tmp/portfolio.zip') as myzip:
+        for nm in myzip.namelist():
+            try:
+                obj = myzip.open(nm)
+                portfolio_bucket.upload_fileobj(obj, nm)
+                portfolio_bucket.Object(nm).Acl().put(ACL='public-read')
+            except Exception as e:
+                logging.error(f"Error processing file {nm}: {str(e)}")
+except Exception as e:
+    logging.error(f"Error downloading or processing zip file: {str(e)}")

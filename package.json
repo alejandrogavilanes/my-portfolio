@@ -1,5 +1,5 @@
 {
-  "name": "my-portfolio",
+  "name": "@amzn/my-portfolio",
   "version": "1.0.0",
   "description": "My Portfolio",
   "main": "index.js",

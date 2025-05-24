@@ -1,3 +1,5 @@
+// Import the 'path' module at the top of the file
+// Import the 'path' module at the top of the file
 const path = require('path');
 
 module.exports = {

@@ -1,6 +1,8 @@
-// Import the 'path' module at the top of the file
-// Import the 'path' module at the top of the file
+// Import the 'path' module
 const path = require('path');
+
+// Rest of the code...
+
 
 module.exports = {
   entry: './js/main.js',
